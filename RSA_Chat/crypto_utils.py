@@ -6,10 +6,12 @@ import json
 
 def generate_rsa_keys():
     """RSA 키 쌍 생성"""
+    # 2048비트 RSA 키 쌍 생성
     key = RSA.generate(2048)
-    private_key = key.export_key()
-    public_key = key.publickey().export_key()
+    private_key = key.export_key()  # 개인키
+    public_key = key.publickey().export_key()  # 공개키
     return private_key, public_key
+
 
 def encrypt_message(public_key, message):
     """메시지 RSA 암호화"""
